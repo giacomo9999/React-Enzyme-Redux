@@ -1,5 +1,7 @@
 import { ShallowWrapper } from "enzyme";
 
+import checkPropTypes from "check-prop-types";
+
 /**
  * Find all the elements in a ShallowWrapper with a particular attribute
  * @param {ShallowWrapper} wrapper
@@ -9,4 +11,14 @@ import { ShallowWrapper } from "enzyme";
 export const findByAttr = (wrapper, attr) => {
   //   console.log(wrapper.debug());
   return wrapper.find(`[data-test='${attr}']`);
+};
+
+export const checkProps = (component, conformingProps) => {
+  const testedProps = checkPropTypes(
+    component.propTypes,
+    conformingProps,
+    "prop",
+    component.name
+  );
+  expect(testedProps).toBeUndefined();
 };
