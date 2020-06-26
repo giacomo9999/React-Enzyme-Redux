@@ -1,12 +1,8 @@
 import React from "react";
-import Enzyme, { shallow } from "enzyme";
-import EnzymeAdapter from "enzyme-adapter-react-16";
-
+import { shallow } from "enzyme";
 import { findByAttr, checkProps } from "../test/testUtils";
 
 import Congrats from "./Congrats";
-
-Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 const defaultProps = { success: false };
 /**
@@ -24,15 +20,11 @@ const setup = (props = {}, state = null) => {
 };
 
 test("Renders without error", () => {
-  expect(
-    findByAttr(setup(), "component-congrats").length
-  ).toBe(1);
+  expect(findByAttr(setup(), "component-congrats").length).toBe(1);
 });
 
 test("Renders no text when 'success' prop is false", () => {
-  expect(
-    findByAttr(setup(), "component-congrats").text()
-  ).toBe("");
+  expect(findByAttr(setup(), "component-congrats").text()).toBe("");
 });
 
 test("Renders non-empty congrats message when 'success' prop is true", () => {
