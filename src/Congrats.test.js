@@ -18,7 +18,7 @@ const setup = (props = {}, state = null) => {
   }
   return wrapper;
 };
-
+    
 test("Renders without error", () => {
   expect(findByAttr(setup(), "component-congrats").length).toBe(1);
 });

@@ -1,5 +1,4 @@
 import { ShallowWrapper } from "enzyme";
-
 import checkPropTypes from "check-prop-types";
 
 /**
@@ -9,7 +8,6 @@ import checkPropTypes from "check-prop-types";
  * @returns {ShallowWrapper}
  */
 export const findByAttr = (wrapper, attr) => {
-  //   console.log(wrapper.debug());
   return wrapper.find(`[data-test='${attr}']`);
 };
 
