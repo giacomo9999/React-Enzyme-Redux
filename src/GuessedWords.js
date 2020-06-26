@@ -8,7 +8,17 @@ const GuessedWords = (props) => {
     ? (contents = (
         <span data-test="guess-instructions">Try to guess the word!</span>
       ))
-    : (contents = "");
+    : (contents = (
+        <div data-test="guessed-words-list">
+          <ul>
+            {props.guessedWords.map((entry, index) => (
+              <li key={index} data-test="guessed-word">
+                {entry.guessedWord}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ));
 
   return <div data-test="component-guessed-words">{contents}</div>;
 };
