@@ -14,8 +14,6 @@ const GuessedWords = (props) => {
             <thead>
               <tr>
                 <th>Guessed Word</th>
-              </tr>
-              <tr>
                 <th>Letters Matching</th>
               </tr>
             </thead>
