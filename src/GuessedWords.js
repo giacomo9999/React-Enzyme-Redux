@@ -10,13 +10,22 @@ const GuessedWords = (props) => {
       ))
     : (contents = (
         <div data-test="guessed-words-list">
-          <ul>
+          <table>
+            <thead>
+              <tr>
+                <th>Guessed Word</th>
+              </tr>
+              <tr>
+                <th>Letters Matching</th>
+              </tr>
+            </thead>
             {props.guessedWords.map((entry, index) => (
-              <li key={index} data-test="guessed-word">
-                {entry.guessedWord}
-              </li>
+              <tr key={index} data-test="guessed-word">
+                <td>{entry.guessedWord}</td>
+                <td>{entry.letterMatchCount}</td>
+              </tr>
             ))}
-          </ul>
+          </table>
         </div>
       ));
 
