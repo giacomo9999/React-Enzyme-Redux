@@ -17,12 +17,14 @@ const GuessedWords = (props) => {
                 <th>Letters Matching</th>
               </tr>
             </thead>
-            {props.guessedWords.map((entry, index) => (
-              <tr key={index} data-test="guessed-word">
-                <td>{entry.guessedWord}</td>
-                <td>{entry.letterMatchCount}</td>
-              </tr>
-            ))}
+            <tbody>
+              {props.guessedWords.map((entry, index) => (
+                <tr key={index} data-test="guessed-word">
+                  <td>{entry.guessedWord}</td>
+                  <td>{entry.letterMatchCount}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       ));
